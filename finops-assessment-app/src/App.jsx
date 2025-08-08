@@ -383,19 +383,15 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Print helpers */}
-      <style>{`
-<<<<<<< HEAD
-        @media print { .print\\:hidden { display: none !important; } .print\\:break-inside-avoid { break-inside: avoid; } .no-print-bg { background: white !important; } }
-=======
-<<<<<<< HEAD
-        @media print { .print\\:hidden { display: none !important; } .print\\:break-inside-avoid { break-inside: avoid; } .no-print-bg { background: white !important; } }
-=======
-        @media print { .print\:hidden { display: none !important; } .print\:break-inside-avoid { break-inside: avoid; } .no-print-bg { background: white !important; } }
->>>>>>> 19a258ac46118e209d224bab33f7578f8e8dcba3
->>>>>>> 7420733a14896e7e19f72086aa2b9d80e0e68460
-      `}</style>
+  <div className="min-h-screen bg-gray-50">
+    {/* Print helpers */}
+    <style>{`
+      @media print { 
+        .print\\:hidden { display: none !important; } 
+        .print\\:break-inside-avoid { break-inside: avoid; } 
+        .no-print-bg { background: white !important; } 
+      }
+    `}</style>
 
       {/* Header */}
       <header className="sticky top-0 z-10 backdrop-blur bg-white/80 border-b print:hidden">
