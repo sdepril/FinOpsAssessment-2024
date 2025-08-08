@@ -256,7 +256,7 @@ export default function App() {
               lensTotals[q.lens].sum += w;
               lensTotals[q.lens].answered += 1;
               const text = q.options?.[lvl] || lvl;
-              lensTotals[q.lens].answers.push({ question: q.text, choice: text, weight20: w });
+              lensTotals[q.lens].answers.push({ question: q.text, choice: text, weight20: w, level: lvl });
             }
           }
         });
@@ -386,7 +386,11 @@ export default function App() {
     <div className="min-h-screen bg-gray-50">
       {/* Print helpers */}
       <style>{`
+<<<<<<< HEAD
+        @media print { .print\\:hidden { display: none !important; } .print\\:break-inside-avoid { break-inside: avoid; } .no-print-bg { background: white !important; } }
+=======
         @media print { .print\:hidden { display: none !important; } .print\:break-inside-avoid { break-inside: avoid; } .no-print-bg { background: white !important; } }
+>>>>>>> 19a258ac46118e209d224bab33f7578f8e8dcba3
       `}</style>
 
       {/* Header */}
@@ -801,6 +805,10 @@ export default function App() {
                               <tr>
                                 <th className="p-2 text-left">Question</th>
                                 <th className="p-2 text-left">Lens</th>
+<<<<<<< HEAD
+                                <th className="p-2 text-left">Answer</th>
+=======
+>>>>>>> 19a258ac46118e209d224bab33f7578f8e8dcba3
                               </tr>
                             </thead>
                             <tbody>
@@ -813,6 +821,21 @@ export default function App() {
                                       {q.lens}
                                     </span>
                                   ) : "-"}</td>
+<<<<<<< HEAD
+                                  <td className="p-2">{(() => {
+                                    const level = ans?.[idx];
+                                    if (!level) return <span className="text-gray-400">–</span>;
+                                    const text = q.options?.[level] || level;
+                                    const ls = getLensStyle(q.lens);
+                                    return (
+                                      <div>
+                                        <span className="inline-flex items-center rounded-full border px-2 py-0.5 text-xs mr-2" style={{ borderColor: ls.color, backgroundColor: ls.tint, color: ls.color }}>{level}</span>
+                                        <span>{text}</span>
+                                      </div>
+                                    );
+                                  })()}</td>
+=======
+>>>>>>> 19a258ac46118e209d224bab33f7578f8e8dcba3
                                 </tr>
                               ))}
                             </tbody>
