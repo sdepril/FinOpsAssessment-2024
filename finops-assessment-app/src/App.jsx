@@ -389,8 +389,12 @@ export default function App() {
 <<<<<<< HEAD
         @media print { .print\\:hidden { display: none !important; } .print\\:break-inside-avoid { break-inside: avoid; } .no-print-bg { background: white !important; } }
 =======
+<<<<<<< HEAD
+        @media print { .print\\:hidden { display: none !important; } .print\\:break-inside-avoid { break-inside: avoid; } .no-print-bg { background: white !important; } }
+=======
         @media print { .print\:hidden { display: none !important; } .print\:break-inside-avoid { break-inside: avoid; } .no-print-bg { background: white !important; } }
 >>>>>>> 19a258ac46118e209d224bab33f7578f8e8dcba3
+>>>>>>> 7420733a14896e7e19f72086aa2b9d80e0e68460
       `}</style>
 
       {/* Header */}
@@ -800,68 +804,61 @@ export default function App() {
                               })()}
                             </div>
                           </div>
-                          <table className="w-full text-sm border rounded-xl overflow-hidden">
-                            <thead className="bg-gray-50">
-                              <tr>
-                                <th className="p-2 text-left">Question</th>
-                                <th className="p-2 text-left">Lens</th>
-<<<<<<< HEAD
-                                <th className="p-2 text-left">Answer</th>
-=======
->>>>>>> 19a258ac46118e209d224bab33f7578f8e8dcba3
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {cap.questions.map((q, idx) => (
-                                <tr key={idx} className="odd:bg-white even:bg-gray-50">
-                                  <td className="p-2">{q.text}</td>
-                                  <td className="p-2">{q.lens ? (
-                                    <span className="inline-flex items-center rounded-full border px-2 py-0.5 text-xs" title={ans?.[idx] || ''}
-                                          style={{ borderColor: getLensStyle(q.lens).color, backgroundColor: getLensStyle(q.lens).tint, color: getLensStyle(q.lens).color }}>
-                                      {q.lens}
-                                    </span>
-                                  ) : "-"}</td>
-<<<<<<< HEAD
-                                  <td className="p-2">{(() => {
-                                    const level = ans?.[idx];
-                                    if (!level) return <span className="text-gray-400">–</span>;
-                                    const text = q.options?.[level] || level;
-                                    const ls = getLensStyle(q.lens);
-                                    return (
-                                      <div>
-                                        <span className="inline-flex items-center rounded-full border px-2 py-0.5 text-xs mr-2" style={{ borderColor: ls.color, backgroundColor: ls.tint, color: ls.color }}>{level}</span>
-                                        <span>{text}</span>
-                                      </div>
-                                    );
-                                  })()}</td>
-=======
->>>>>>> 19a258ac46118e209d224bab33f7578f8e8dcba3
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
-                      );
-                    })}
-                  </CardBody>
-                </Card>
-              </>
-            )}
-          </>
-        )}
-      </main>
+                   <table className="w-full text-sm border rounded-xl overflow-hidden">
+  <thead className="bg-gray-50">
+    <tr>
+      <th className="p-2 text-left">Question</th>
+      <th className="p-2 text-left">Lens</th>
+      <th className="p-2 text-left">Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    {cap.questions.map((q, idx) => (
+      <tr key={idx} className="odd:bg-white even:bg-gray-50">
+        <td className="p-2">{q.text}</td>
+        <td className="p-2">
+          {q.lens ? (
+            <span
+              className="inline-flex items-center rounded-full border px-2 py-0.5 text-xs"
+              title={ans?.[idx] || ''}
+              style={{
+                borderColor: getLensStyle(q.lens).color,
+                backgroundColor: getLensStyle(q.lens).tint,
+                color: getLensStyle(q.lens).color
+              }}
+            >
+              {q.lens}
+            </span>
+          ) : (
+            "-"
+          )}
+        </td>
+        <td className="p-2">
+          {(() => {
+            const level = ans?.[idx];
+            if (!level)
+              return <span className="text-gray-400">–</span>;
+            const text = q.options?.[level] || level;
+            const ls = getLensStyle(q.lens);
+            return (
+              <div>
+                <span
+                  className="inline-flex items-center rounded-full border px-2 py-0.5 text-xs mr-2"
+                  style={{
+                    borderColor: ls.color,
+                    backgroundColor: ls.tint,
+                    color: ls.color
+                  }}
+                >
+                  {level}
+                </span>
+                <span>{text}</span>
+              </div>
+            );
+          })()}
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
 
-      {/* Footer (prints as well) */}
-      <footer className="max-w-7xl mx-auto px-4 py-6 text-xs text-gray-500 text-center print:text-black">
-        <div className="flex items-center justify-center gap-2 flex-wrap">
-          <span>Powered by</span>
-          <img src={brand.costraLogo || "/Logo black-2.svg"} alt="Costra" className="h-4 object-contain" onError={(e)=>{e.currentTarget.style.display='none';}} />
-          {brand.partnerLogo && (<>
-            <span>together with</span>
-            <img src={brand.partnerLogo} alt="Partner" className="h-4 object-contain" />
-          </>)}
-        </div>
-      </footer>
-    </div>
-  );
-}
