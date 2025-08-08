@@ -1,41 +1,23 @@
-# FinOps Assessment App (Vite + React)
+# FinOps Assessment 2024
 
-Single-page webapp to run a FinOps capability/lens assessment, visualize results (spider + per-lens bars), and export/import answers.
+Live: https://fin-ops-assessment-2024-eeck.vercel.app
 
-## Local dev
+## Gebruik
+1. **Import Model** en laad je JSON (bijv. `public/model.json`).
+2. **Setup**: kies capabilities.
+3. **Assessment**: beantwoord de vragen.
+4. **Report**: spider (totale score 0–100 per capability), per-lens barcharts en printbare antwoordenlijst.
+5. **Export Answers** om JSON te downloaden (of **Copy JSON**).
 
+## Develop lokaal
 ```bash
-npm i
+npm install
 npm run dev
+# open http://localhost:5173
 ```
 
-Open http://localhost:5173 and **Import Model** (use `public/model.json` to test).
-
 ## Build
-
 ```bash
 npm run build
 npm run preview
 ```
-
-## Deploy
-
-### Easiest: Vercel
-- Import this repo in Vercel, framework = Vite. No extra config.
-
-### GitHub Pages
-We set `base` from an env var so the app works under `/REPO_NAME/`:
-
-```bash
-VITE_BASE=/<your-repo-name>/ npm run build
-```
-
-Then publish the `dist/` folder as Pages (or keep the included GH Action).
-
-### Included GitHub Action
-A workflow is included at `.github/workflows/deploy.yml` that builds with the correct base and deploys to Pages on every push to `main`.
-
-## Notes
-- Tailwind classes are used; Tailwind is included and pre-configured.
-- Recharts provides the spider + bar charts.
-- **Export Answers** downloads JSON; **Import Answers** restores selection + answers.
