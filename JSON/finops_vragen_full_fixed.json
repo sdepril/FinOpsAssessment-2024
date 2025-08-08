@@ -1,0 +1,2160 @@
+{
+  "capabilities": [
+    {
+      "key": "allocation",
+      "name": "Allocation",
+      "description": "Define strategies to assign and share cloud costs using accounts, tags, labels, and other metadata, creating accountability among teams and projects within an organization.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How comprehensive is your organization's knowledge regarding the strategies for effective cloud cost allocation?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No knowledge of cloud cost allocation principles.",
+            "Crawl": "Basic awareness exists but is limited to specific individuals within finance or IT teams.",
+            "Walk": "Moderate understanding across key teams, with some following up in cloud cost allocation strategies.",
+            "Run": "Strong, organization-wide knowledge and ongoing and high follow up.",
+            "Fly": "Advanced knowledge, with continuous improvement in cloud cost allocation."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How developed are the processes your organization uses for allocating cloud costs to business units or projects?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes in place for cost allocation.",
+            "Crawl": "Initial, inconsistent use of meta-data.",
+            "Walk": "Defined tagging / meta-data processes applied to major workloads.",
+            "Run": "Fully developed, standardized processes across all units, with comprehensive guidelines & documented artefacts.",
+            "Fly": "Fully automated, optimized, and regularly reviewed processes for dynamic and up to date allocation."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization employ to measure the effectiveness and accuracy of cloud cost allocation?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No metrics are used to measure allocation effectiveness.",
+            "Crawl": "Basic metrics such as tagged resources are infrequently monitored.",
+            "Walk": "Reporting in place for some allocation metrics with some near real-time data.",
+            "Run": "Reporing in place for all metadata and deviations are detected & flagged automatically.",
+            "Fly": "Advanced, near real-time metrics integrated with business performance, with insights for allocation accuracy and hygiene."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How widely are cloud cost allocation processes and principles adopted within your organization?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of cloud cost allocation processes.",
+            "Crawl": "Limited adoption, confined to specific departments or large projects.",
+            "Walk": "Good adoption with formal policies across most workloads & teams",
+            "Run": "Full adoption with regular updates and compliance checks across all workloads & teams.",
+            "Fly": "Deep integration of cost allocation into daily operations with proactive engagement from all stakeholders."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent has your organization automated the cloud cost allocation process?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all processes are manual.",
+            "Crawl": "Basic automation in some areas",
+            "Walk": "Moderate automation, some IaC some manualy deployed and maintained",
+            "Run": "High-level automation with deployment & follow-up of tags through IaC",
+            "Fly": "Fulll automation with deployment of tags through IaC and cloud governance policies adhering the deploy"
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "anomaly-management",
+      "name": "Anomaly Management",
+      "description": "Anomaly Management gives a FinOps team the ability to detect, identify, clarify, alert on, and manage unexpected cloud cost events in a timely manner, in order to minimize impact to the business.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the principles and strategies for identifying and managing cost anomalies in cloud spending?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of principles for anomaly detection in cloud costs.",
+            "Crawl": "Basic awareness and understanding limited to IT teams.",
+            "Walk": "Moderate understanding across relevant departments, with some ad-hoc training.",
+            "Run": "Strong, comprehensive knowledge and regular awareness sessions  & training.",
+            "Fly": "Organization-wide expertise in advanced anomaly detection and management techniques and continuous training and internal & external benchmarking."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for detecting and managing anomalies in cloud cost and usage data?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes established for anomaly detection.",
+            "Crawl": "Ad-hoc processes used only when significant discrepancies are noticed.",
+            "Walk": "Defined processes for regular review and management of anomalies in major expense areas.",
+            "Run": "Standardized, processes applied uniformly across all cloud services.",
+            "Fly": "Fully automated, continuous monitoring processes with near real-time detection and resolution of anomalies."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of anomaly management in cloud costs?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No metrics specifically for tracking anomaly management effectiveness.",
+            "Crawl": "Basic metrics like frequency of anomalies detected and resolved.",
+            "Walk": "Detailed metrics including time to detect and resolve anomalies and the financial impact of each anomaly.",
+            "Run": "Advanced metrics that also incorporate effectiveness and reduction in incident rates.",
+            "Fly": "Near real-time metrics integrated with overall financial performance, utilizing cloud cost data for better insights and trend analysis."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are your anomaly management processes and tools adopted across the organization?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of anomaly management practices.",
+            "Crawl": "Limited adoption, generally in major cost centers or specific cloud-heavy departments.",
+            "Walk": "Good adoption with formal policies implemented across multiple departments.",
+            "Run": "Wide adoption including regular reviews and updates to policies and practices.",
+            "Fly": "Organisation wide adoption with all employees trained and incentivized to manage, report and resolve anomalies."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are anomaly detection and management processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation, all processes are manual.",
+            "Crawl": "Basic automation in data collection and manually alerting for potential anomalies.",
+            "Walk": "Moderate automation, including automated alerts and some automated resolution processes.",
+            "Run": "High-level automation with systems that not only detect but also suggest or implement resolutions.",
+            "Fly": "Full automation with data driven systems that can detect and resolve anomalies in near real-time."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "architecting-for-cloud",
+      "name": "Architecting for Cloud",
+      "description": "With the introduction of FinOps and broader use of cloud, engineering and product teams not only have the responsibility to choose services that meet the operational requirements of their systems, but also the sustainability and financial viability of those systems.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the best practices and strategies for architecting solutions in the cloud to optimize cost efficiency?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of cloud architecture principles related to cost optimization.",
+            "Crawl": "Basic awareness and understanding are confined to specialized IT architecture teams.",
+            "Walk": "Moderate understanding across IT and finance departments, with some formal training.",
+            "Run": "Strong, comprehensive knowledge and regular training sessions on cloud architecture optimization techniques.",
+            "Fly": "Broad expertise in cloud architecture strategies, including external certifications and continuous training. (FinOps Professional Certification for example)"
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for designing and implementing cost-optimized cloud architectures?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes established for architecting cloud solutions.",
+            "Crawl": "Ad-hoc \"best practices\" are followed used but no formal process followed.",
+            "Walk": "Defined processes for reviewing and approving cloud architecture designs with cost considerations.",
+            "Run": "Standardized, proactive processes applied uniformly across all projects, ensuring cost efficiency from the design phase.",
+            "Fly": "Fully automated governance processes with integrated tools to enforce cost-efficient architecture standards."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of cloud architecture in terms of cost optimization?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No metrics specifically for evaluating cloud architecture cost effectiveness.",
+            "Crawl": "Basic metrics such as cost per deployed service.",
+            "Walk": "Detailed metrics including expected cost through architectural decisions and adjustments.",
+            "Run": "Advanced metrics that also incorporate cost efficiency of scaling operations and utilization rates.",
+            "Fly": "Integrated with architectural decision-making tools, utilizing tools to help on predictive insights and optimization."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are cost-optimized architectural practices and principles adopted within your organization?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of cost-optimized architectural practices.",
+            "Crawl": "Limited adoption, generally in major projects or specific cloud-heavy departments.",
+            "Walk": "Good adoption with formal policies implemented across multiple departments.",
+            "Run": "Wide adoption including regular reviews and updates to architectural practices.",
+            "Fly": "Universal adoption with all stakeholders engaged in continuous improvement of cloud architecture practices."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are the processes for architecting cost-optimized solutions in the cloud automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation, all architectural processes are manually performed.",
+            "Crawl": "Basic automation in initial architectural templates using the cloud platform calculators.",
+            "Walk": "Moderate automation, including the use of cloud management platforms calculators that assist in architecture design.",
+            "Run": "High-level automation with cloud calculators embedded in our systems that provide near real-time feedback on cost implications during the design phase.",
+            "Fly": "Full automation with data driven tools that design & optimize cloud architecture."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "benchmarking",
+      "name": "Benchmarking",
+      "description": "Benchmarking allows organizations to compare unit metrics and KPIs for important aspects of cloud value and optimization both internally between different teams, and externally with other organizations using cloud in similar ways.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand benchmarking practices and their application in cloud cost management?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of benchmarking principles related to cloud cost management.",
+            "Crawl": "Basic knowledge of benchmarking confined to specialized finance or cloud teams.",
+            "Walk": "Moderate knowledge and understanding across financial and cloud operations teams, with some training.",
+            "Run": "Strong, organization-wide knowledge on evolving cloud cost benchmarking practices.",
+            "Fly": "Advanced expertise and thought leadership in benchmarking, contributing to industry standards."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place to conduct benchmarking for cloud costs and performance?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes established for benchmarking.",
+            "Crawl": "Ad-hoc processes used sporadically when significant budget impacts occur.",
+            "Walk": "Defined processes that are systematically applied to major projects or annually.",
+            "Run": "Standardized, ongoing processes integrated with cloud governance and financial management.",
+            "Fly": "Fully automated, continuous benchmarking processes with dynamic updates and optimizations."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its benchmarking practices in cloud cost management?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No metrics are specifically used to track the effectiveness of benchmarking practices.",
+            "Crawl": "Basic metrics, such as cost savings achieved from periodic benchmarking exercises.",
+            "Walk": "A comprehensive set of metrics that also includes performance improvements and operational efficiencies gained across internal teams",
+            "Run": "Detailed metrics that evaluate benchmarking activities and compare outcomes against industry peers.",
+            "Fly": "Advanced analytics are used to measure benchmarking effectiveness, incorporating external market trends and internal performance data."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How widely are cloud cost allocation processes and principles adopted within your organization?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of benchmarking practices for cloud management.",
+            "Crawl": "Limited adoption, typically within core IT or finance teams only.",
+            "Walk": "Good adoption with policies and tools implemented across major departments.",
+            "Run": "Wide adoption, including regular updates to benchmarking practices and active participation across all relevant teams.",
+            "Fly": "Universal adoption with benchmarking ingrained in organizational culture and continuous improvement processes."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are benchmarking processes automated in your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all benchmarking processes are manual and labor-intensive.",
+            "Crawl": "Basic automation, such as the use of tools for data collection and initial analysis.",
+            "Walk": "Moderate automation with systems in place for regular data gathering and reporting.",
+            "Run": "High-level automation including automated insights generation and benchmark comparison tools.",
+            "Fly": "Full automation systems that continuously benchmarks, analyzes, and provides actionable insights in near real-time."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "budgeting",
+      "name": "Budgeting",
+      "description": "Strategic and ongoing process for setting limits, monitoring, and managing cloud spending, aligned with business objectives, to ensure accountability and predictable financial outcomes for cloud-based systems.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand budgeting practices for cloud cost management?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of cloud budgeting principles.",
+            "Crawl": "Basic awareness of cloud budgeting confined to specialized teams.",
+            "Walk": "Moderate understanding across financial and operational teams, with formal training in place.",
+            "Run": "Strong, comprehensive knowledge and regular training sessions on cloud budgeting techniques.",
+            "Fly": "Organization-wide expertise in advanced budgeting practices, including external certifications and continuous training."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for developing and managing cloud budgets?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes established for cloud budgeting.",
+            "Crawl": "Ad-hoc budgeting processes used only when significant financial decisions are made.",
+            "Walk": "Defined processes that are systematically applied to all major cloud projects and services.",
+            "Run": "Standardized, proactive budgeting processes & reviews integrated across all cloud services and departments.",
+            "Fly": "Fully automated, continuous budgeting processes with regular adjustments based on cloud usage and cost predictions validated by business owners."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its cloud budgeting practices?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No metrics specifically for tracking the effectiveness of cloud budgeting.",
+            "Crawl": "Basic metrics such as variance between actual and budgeted costs.",
+            "Walk": "Comprehensive metrics that also include forecasting accuracy and cost optimization outcomes.",
+            "Run": "Detailed metrics evaluating the ROI of cloud investments and the impact of budgeting decisions on overall business performance.",
+            "Fly": "Advanced, near real-time metrics integrated with predictive analytics to continuously refine budgeting strategies."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are budgeting processes and principles adopted within your organization for managing cloud costs?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of cloud budgeting practices.",
+            "Crawl": "Limited adoption, generally within IT and finance departments.",
+            "Walk": "Good adoption with formal policies and tools implemented across multiple departments.",
+            "Run": "Wide adoption including regular reviews and updates to budgeting practices.",
+            "Fly": "Universal adoption with all stakeholders trained and actively participating in cloud budgeting processes."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are budgeting processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all budgeting processes are manual.",
+            "Crawl": "Basic automation in some areas, such as automated data collection for budget preparation.",
+            "Walk": "Moderate automation, including automated alerts for budget thresholds and forecast updates.",
+            "Run": "High-level automation with systems that not only monitor but also suggest budget adjustments based on predictive modeling.",
+            "Fly": "Full automation with data driven systems that dynamically adjust budgets in near real-time based on operational data and financial goals."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "cloud-policy-governance",
+      "name": "Cloud Policy & Governance",
+      "description": "Establishing and evolving policies, controls and governance mechanisms to ensure that cloud use aligns with business objectives, complies with regulatory requirements, and optimizes cloud resources efficiently.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand cloud policy and governance frameworks?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of cloud policy and governance frameworks.",
+            "Crawl": "Basic knowledge of cloud governance principles limited to IT teams.",
+            "Walk": "Moderate understanding across IT, finance, and compliance teams, with some formal training in governance frameworks (CAF/WAF or other frameworks).",
+            "Run": "Strong, organization-wide knowledge and regular knowledge sessions on cloud policy updates and governance best practices.",
+            "Fly": "Advanced expertise with ongoing participation in industry governance standards development and structural knowledge sharing programs."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place to implement and manage cloud policies and governance?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes for cloud policy implementation and governance.",
+            "Crawl": "Some processes used/implemented reactively in response to issues or audits.",
+            "Walk": "Defined and documented processes that are systematically followed to manage compliance and governance across major cloud initiatives.",
+            "Run": "Standardized, proactive governance documentaton & processes integrated across all cloud services and departments.",
+            "Fly": "Fully automated governance documentation & processes with continuous monitoring and compliance enforcement mechanisms. (Policy as code by default)"
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its cloud policy and governance practices?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No metrics specifically for tracking governance effectiveness.",
+            "Crawl": "Basic metrics such as compliance rates or number of governance issues identified per capability",
+            "Walk": "Comprehensive metrics per capability that include time to resolve compliance issues, audit results.",
+            "Run": "Detailed metrics evaluating the impact of governance practices on cloud cost efficiency (continious reporting to different personas)",
+            "Fly": "Advanced, near real-time metrics integrated with continuous compliance monitoring and risk assessment tools."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are cloud policy and governance practices adopted within your organization?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of cloud governance practices.",
+            "Crawl": "Limited adoption, generally within IT teams.",
+            "Walk": "Good adoption with formal policies implemented across IT, finance, and operations.",
+            "Run": "Wide adoption including regular policy reviews and compliance checks across all departments.",
+            "Fly": "Universal adoption with governance practices deeply integrated into daily operations and decision-making processes."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are cloud policy enforcement and governance processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all policy management and governance processes are manual.",
+            "Crawl": "Basic automation, such as the use of standard templates for policy documentation.",
+            "Walk": "Moderate automation with systems in place for regular policy enforcement (tagging, anomaly, budgetting,\u2026).",
+            "Run": "High-level automation including automated compliance checks and remediation actions.",
+            "Fly": "Full automation with data driven systems that automatically and dynamically enforce policies, manage exceptions, and provide governance insights in near real-time."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "cloud-sustainability",
+      "name": "Cloud Sustainability",
+      "description": "Cloud Sustainability defines how the organization will make decisions about using cloud in ways that consider both its impact on the environment and the organization\u2019s broader sustainability goals.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the principles and strategies for achieving sustainability in cloud environments?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of sustainability principles related to cloud environments.",
+            "Crawl": "Basic awareness of sustainability principles, confined to environmental or corporate social responsibility teams.",
+            "Walk": "Moderate understanding across IT, operations, and sustainability teams, with informal knowledge sharing initiatives.",
+            "Run": "Strong, organization-wide knowledge and regular training sessions on sustainable  practices including cloud.",
+            "Fly": "Organization-wide expertise in cloud sustainability, with continuous updates and participation in industry sustainability programs."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place to ensure cloud sustainability?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes established for ensuring cloud sustainability.",
+            "Crawl": "Ad-hoc processes used sporadically, typically in response to specific sustainability initiatives or projects.",
+            "Walk": "Defined processes that are systematically applied to major projects or areas, with clear sustainability objectives.",
+            "Run": "Standardized, proactive processes integrated across all cloud services and operational activities.",
+            "Fly": "Fully automated processes with continuous monitoring and optimization of resource usage for sustainability."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its sustainability efforts in the cloud?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness of cloud sustainability efforts.",
+            "Crawl": "Basic metrics, provided by cloud providers",
+            "Walk": "Some metrics that include tracking of resource utilization and the carbon footprint.",
+            "Run": "Detailed metrics evaluating the sustainability impact on cost savings and environmental benefits.",
+            "Fly": "Advanced, near real-time metrics integrated with global sustainability goals & standardized reporting."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are sustainability practices and principles adopted within your organization for cloud operations?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of sustainability practices for cloud operations.",
+            "Crawl": "Limited adoption, typically within specific projects or by sustainability champions within the organization this includes some IT personas.",
+            "Walk": "Good adoption with formal sustainability policies implemented across major operational areas.",
+            "Run": "Wide adoption including regular updates to sustainability practices and active participation across all teams.",
+            "Fly": "Universal adoption with sustainability deeply embedded into the organizational culture and operational decision-making."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are sustainability processes automated within your organization's cloud operations?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all sustainability processes are manually managed.",
+            "Crawl": "Basic automation, such as automated reporting of energy consumption and basic resource optimization tools.",
+            "Walk": "Moderate automation with systems in place for optimizing resource usage and reducing waste.",
+            "Run": "High-level automation including automated scaling, use of energy-efficient computing.",
+            "Fly": "Full automation with data driven systems that dynamically optimize cloud resources for maximum sustainability impact."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "data-ingestion",
+      "name": "Data Ingestion",
+      "description": "Data Ingestion involves gathering, transferring, processing, transforming, and correlating various datasets to create a queryable, contextualized repository, at the appropriate level of granularity, accessibility, and completeness to support activities in all of the FinOps Capabilities across all FinOps Personas.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the principles and practices involved in effective data ingestion for cloud cost management?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of data ingestion principles for cloud cost management.",
+            "Crawl": "Basic awareness of data ingestion principles, confined to IT or data management teams.",
+            "Walk": "Moderate understanding across IT most knowledge is focussed on some people",
+            "Run": "Strong knowledge and regular sessions to enhance data ingestion techniques and consistency.",
+            "Fly": "Expertise in data ingestion across the organization, with ongoing learning and adaptation of best practices from industry leaders."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for the ingestion of cloud usage and cost data?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes established for data ingestion.",
+            "Crawl": "Ad-hoc processes used only when necessary, often leading to delays or data gaps and inconsistency",
+            "Walk": "Defined ETL processes that are consistently applied to all major cloud projects and services.",
+            "Run": "Standardized, proactive processes integrated across cloud operations and financial management systems.",
+            "Fly": "Fully automated, optimized processes with near real-time data ingestion, consistency checking and error handling mechanisms."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its data ingestion processes?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness of data ingestion.",
+            "Crawl": "Basic metrics such as timeliness and completeness of data ingestion.",
+            "Walk": "Comprehensive metrics that include data accuracy, integration speed, and the impact on cost management.",
+            "Run": "Detailed metrics evaluating the efficiency of the data ingestion pipeline and its effect on financial forecasting and reporting.",
+            "Fly": "Advanced, near real-time metrics with automated alerts for data anomalies and predictive analytics for ingestion performance."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are data ingestion practices adopted within your organization for managing cloud costs?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of systematic data ingestion practices.",
+            "Crawl": "Limited adoption, generally within specific IT or cloud management teams.",
+            "Walk": "Good adoption within the teams responsible for the ingestion process.",
+            "Run": "Wide adoption in the responsible teams for the ingestion process, including regular reviews and continuous improvements to data ingestion practices.",
+            "Fly": "Universal adoption with data ingestion practices being a core component of cloud cost reporting."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are data ingestion processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; data ingestion is manually handled.",
+            "Crawl": "Basic automation, such as automated data collection from cloud APIs.",
+            "Walk": "Moderate automation, including automated data transformation and initial loading into analysis tools.",
+            "Run": "High-level automation with comprehensive data pipelines that include error detection and resolution.",
+            "Fly": "Full automation with data driven systems that ensure continuous data ingestion, optimization, and integration without human intervention."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "finops-assessment",
+      "name": "FinOps Assessment",
+      "description": "Assessment of the FinOps practice allows a FinOps team to measure its own effectiveness, map its activities against the goals of the organization, and identify areas where it will be valuable to mature those activities. Assessment of FinOps Capabilities can be done at every stage of an organization\u2019s FinOps journey.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the principles and practices of conducting a FinOps assessment?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of FinOps assessment principles and practices.",
+            "Crawl": "Basic awareness of FinOps assessment concepts, limited to a few team members.",
+            "Walk": "Moderate understanding across key teams, with some structured documentation.",
+            "Run": "Strong, organization-wide knowledge with a regular cadence to do the assessment.",
+            "Fly": "Expertise level in building and conducting FinOps assessments with continuous learning and industry engagement."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for conducting regular FinOps assessments?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes for conducting FinOps assessments.",
+            "Crawl": "Ad hoc used process for conducting FinOps assessments",
+            "Walk": "Defined processes regularly planned FinOps assessments sessions.",
+            "Run": "Standardized, proactive processes integrated with cloud cost operations.",
+            "Fly": "Fully automated and routinely followed processes for continuous FinOps assessment and feedback."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its FinOps assessment practices?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness of FinOps assessments.",
+            "Crawl": "Basic metrics such as the frequency of assessments and maturity growth.",
+            "Walk": "Comprehensive metrics including assessment impact on maturity and roadmap.",
+            "Run": "Detailed metrics evaluating the long-term operational benefits of regular FinOps assessments.",
+            "Fly": "Advanced, near real-time metrics to continuously improve assessment practices and outcomes."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are FinOps assessment practices adopted within your organization?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of FinOps assessment practices.",
+            "Crawl": "Limited adoption, typically within IT.",
+            "Walk": "Good adoption with formal cadence including multiple FinOps Core Personas.",
+            "Run": "Wide adoption and clear communication about the assessment and maturity state.",
+            "Fly": "Broad adoption with FinOps assessments being a component of organizational strategy and decision-making."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are FinOps assessment processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all assessment processes are manual.",
+            "Crawl": "Basic automation, such as automated data collection for assessment preparation.",
+            "Walk": "Moderate automation with tools to assist in data analysis and report generation.",
+            "Run": "High-level automation including recommendations based on assessment findings.",
+            "Fly": "Full automation with data driven systems providing continuous assessment, insights, and proactive optimizations."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "finops-education-enablement",
+      "name": "FinOps Education & Enablement",
+      "description": "Training, skill development, and practical activities that enable teams throughout the organization to adopt and deliver the FinOps practice.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the principles and practices of FinOps education and enablement?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of FinOps education and enablement principles.",
+            "Crawl": "Basic awareness of FinOps education concepts, limited to a few team members.",
+            "Walk": "Moderate understanding across key teams, with some structured training programs in place.",
+            "Run": "Strong, organization-wide knowledge with regular training sessions and workshops on FinOps practices.",
+            "Fly": "Expertise in FinOps education across the organization, with continuous learning and contributions to industry knowledge sharing. (speaker at FinOps X or other industry events)"
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for delivering FinOps education and enablement?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes for delivering FinOps education and enablement.",
+            "Crawl": "Ad-hoc processes used occasionally, often reactive to specific needs or requests from some people.",
+            "Walk": "Defined processes that are regularly applied to provide FinOps training and resources to a substanial group of people for example tribe learnings.",
+            "Run": "Standardized, proactive processes integrated with organizational learning and development programs.",
+            "Fly": "Fully automated and optimized processes for continuous FinOps education, with personalized learning paths and near real-time resource availability."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its FinOps education and enablement initiatives?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness of FinOps education.",
+            "Crawl": "Basic metrics such as the number of training sessions conducted and attendance rates.",
+            "Walk": "Comprehensive metrics including participant feedback, knowledge retention, and application of learning.",
+            "Run": "Detailed metrics evaluating the impact of education initiatives on FinOps practices and financial outcomes.",
+            "Fly": "Advanced, near real-time metrics integrated with learning management systems to continuously improve education and enablement programs."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are FinOps education and enablement practices adopted within your organization?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of FinOps education and enablement practices.",
+            "Crawl": "Limited adoption, typically within IT and finance departments.",
+            "Walk": "Good adoption with formal training programs and resources available across major departments.",
+            "Run": "Wide adoption including regular updates and improvements to education programs based on feedback.",
+            "Fly": "Universal adoption with FinOps education deeply embedded in organizational culture and continuous professional development."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are FinOps education and enablement processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all education processes are manual.",
+            "Crawl": "Basic automation, such as the use of digital platforms for delivering training materials.",
+            "Walk": "Moderate automation with tools to track progress, manage schedules, and provide assessments.",
+            "Run": "High-level automation including personalized learning paths and automated feedback systems.",
+            "Fly": "Full automation with data driven learning systems providing continuous education, near real-time insights, and persona based learning experiences."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "finops-practice-operations",
+      "name": "FinOps Practice Operations",
+      "description": "Driving a culture of accountability by running an effective FinOps team that empowers the FinOps practice through continuous implementation of FinOps strategy and processes.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the principles and practices for effective FinOps practice operations?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of principles for FinOps practice operations.",
+            "Crawl": "Basic awareness of FinOps operations principles, limited to a few team members.",
+            "Walk": "Moderate understanding across key teams, with some structured training in place.",
+            "Run": "Strong, organization-wide knowledge and regular training sessions on best practices for FinOps operations.",
+            "Fly": "Expertise in FinOps practice operations across the organization, with continuous learning and industry engagement."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for managing FinOps practice operations?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes for managing FinOps operations.",
+            "Crawl": "Ad-hoc processes used occasionally, often reactive to specific issues or needs.",
+            "Walk": "Defined processes that are consistently applied to manage FinOps operations across major cloud projects and services.",
+            "Run": "Standardized, proactive processes integrated with cloud and financial management practices.",
+            "Fly": "Fully automated, optimized processes for continuous management and improvement of FinOps operations."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its FinOps practice operations?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness of FinOps practice operations.",
+            "Crawl": "Basic metrics such as the number of FinOps initiatives undertaken and their immediate outcomes.",
+            "Walk": "Comprehensive metrics that include cost savings, efficiency improvements, and operational effectiveness.",
+            "Run": "Detailed metrics evaluating the long-term financial and operational benefits of FinOps practices.",
+            "Fly": "Advanced, near real-time metrics integrated with advanced analytics to improve FinOps operations and outcomes."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are FinOps practice operations adopted within your organization?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of FinOps practice operations.",
+            "Crawl": "Limited adoption, generally within IT and finance departments.",
+            "Walk": "Good adoption with formal policies and tools implemented across significant parts of the organization.",
+            "Run": "Wide adoption with regular reviews and continuous improvements based on FinOps operational outcomes.",
+            "Fly": "Adoption with FinOps operations deeply embedded in organizational culture and decision-making processes."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are FinOps practice operations processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all FinOps operations processes are manual.",
+            "Crawl": "Basic automation, such as automated reporting and data collection for FinOps activities.",
+            "Walk": "Moderate automation with advanced tools to assist in data analysis, workflow management, and process optimization.",
+            "Run": "High-level automation including automated insights generation, alerts, and recommendations based on FinOps data.",
+            "Fly": "Full automation with AI-driven systems providing continuous management, optimization, and real-time insights for FinOps practice operations."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "finops-tools-services",
+      "name": "FinOps Tools & Services",
+      "description": "Develop and track metrics that provide an understanding of how an organization\u2019s cloud use and cloud management practices impact the value of the organization\u2019s products, services, or activities.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the tools and services available for FinOps practices?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of available FinOps tools and services.",
+            "Crawl": "Basic awareness of some FinOps tools and services, limited to a few team members.",
+            "Walk": "Moderate understanding across key teams, with some structured training on using FinOps tools.",
+            "Run": "Strong, organization-wide knowledge and regular training sessions on the latest FinOps tools and services.",
+            "Fly": "Expertise in FinOps tools and services across the organization, with learnings and active engagements in evaluating new solutions."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for utilizing FinOps tools and services?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes for utilizing FinOps tools and services.",
+            "Crawl": "Ad-hoc processes used typically in response to specific needs.",
+            "Walk": "Defined processes that can be applied for evaluating, selecting, and integrating FinOps tools.",
+            "Run": "Standardized, proactive processes integrated with overall cloud and financial management practices.",
+            "Fly": "Fully automated, optimized processes for continuously evaluating and utilizing FinOps tools and services."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its FinOps tools and services?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness of FinOps tools and services.",
+            "Crawl": "Basic metrics such as tool usage rates and initial impact on cost management.",
+            "Walk": "Comprehensive metrics including tool ROI, efficiency improvements, and user utilization.",
+            "Run": "Detailed metrics evaluating the long-term benefits and integration effectiveness of FinOps tooling ecosystem.",
+            "Fly": "Advanced, near real-time metrics integrated with business intelligence to continuously optimize the use of FinOps tools and related cloud services."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are FinOps tools and services adopted within your organization?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of FinOps tools and services.",
+            "Crawl": "Limited adoption, generally within IT and finance departments.",
+            "Walk": "Good adoption with formal training and support for FinOps tools by the FinOps team across major departments.",
+            "Run": "Wide adoption with regular updates and continuous improvements based on user feedback and utilization.",
+            "Fly": "Universal adoption with FinOps tools and services deeply integrated into daily operations and decision-making processes."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are FinOps tools and services automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all FinOps processes are manual.",
+            "Crawl": "Basic automation, such as data collection, normalization and reporting.",
+            "Walk": "Moderate automation with tools for workflow management and process optimization.",
+            "Run": "High-level automation including automated visualisatoin generation, alerts, and recommendations.",
+            "Fly": "Full automation with data driven systems providing continuous optimization and near real-time insights for FinOps practices."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "forecasting",
+      "name": "Forecasting",
+      "description": "Creating a model of the anticipated future cost and value of cloud systems leveraging statistical methods, historical spend patterns, planned changes, and related metrics.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the principles and techniques for forecasting cloud costs?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of forecasting principles and techniques related to cloud costs.",
+            "Crawl": "Basic awareness of forecasting concepts, limited to a few team members.",
+            "Walk": "Moderate understanding across key teams.",
+            "Run": "Strong knowledge with regular knowledge sessions accross teams.",
+            "Fly": "Expertise in cloud forecasting across the organization with active contributions to industry best practices."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for forecasting cloud costs?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes for forecasting cloud costs.",
+            "Crawl": "Ad-hoc forecasting processes used occasionally, typically reactive to specific needs.",
+            "Walk": "Defined processes that are consistently applied to major cloud services and defined projects.",
+            "Run": "Standardized, proactive forecasting processes integrated with cloud and financial management practices used by the organisation and target group",
+            "Fly": "Fully automated, optimized forecasting processes with near real-time updates and scenario planning capabilities for multiple years."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its cloud cost forecasting?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness of forecasting.",
+            "Crawl": "Basic metrics such as accuracy of forecasts compared to actual costs.",
+            "Walk": "Comprehensive metrics including forecast accuracy, variance analysis, and financial impact.",
+            "Run": "Detailed metrics evaluating the long-term benefits of accurate forecasting on budget planning and cost optimization.",
+            "Fly": "Advanced, near real-time metrics integrated with predictive analytics to continuously improve forecasting accuracy and reliability."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are forecasting practices adopted within your organization?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of forecasting practices.",
+            "Crawl": "Limited adoption, generally within IT and finance departments.",
+            "Walk": "Good adoption with formal policies and tools implemented across major departments.",
+            "Run": "Wide adoption with regular updates and continuous improvements based on forecasting outcomes.",
+            "Fly": "Universal adoption with forecasting practices deeply integrated into organizational strategy and decision-making processes."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are forecasting processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all forecasting processes are manual.",
+            "Crawl": "Basic automation, such as automated data collection for forecasting inputs.",
+            "Walk": "Moderate automation with some tools for data analysis, scenario planning, and report generation.",
+            "Run": "High-level automation including automated forecast generation, variance alerts, and recommendations.",
+            "Fly": "Full automation with data driven systems providing continuous forecasting, near real-time insights, and adaptive adjustments."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "intersecting-disciplines",
+      "name": "Intersecting Disciplines",
+      "description": "Coordinating activities with interconnected disciplines or Allied Personas (such as, ITAM, ITFM, Sustainability, Security) which manage responsibilities broader than just cloud, and which must integrate into the organizational cloud strategy by collaborating with FinOps.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the importance of intersecting disciplines (such as finance, operations, and engineering) in FinOps practices?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of the importance of intersecting disciplines in FinOps practices.",
+            "Crawl": "Basic awareness of intersecting disciplines, limited to specific teams.",
+            "Walk": "Moderate understanding across key teams, with some structured collaborations between teams.",
+            "Run": "Strong, organization-wide knowledge with regular cross-functional knowledge sessions and collaboration initiatives.",
+            "Fly": "Expertise in integrating intersecting disciplines across the organization, with continuous learning and industry engagement."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place to ensure effective collaboration between FinOps teams and other disciplines?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes for collaboration between disciplines",
+            "Crawl": "Ad-hoc collaboration processes used occasionally, typically reactive and on-demand basis.",
+            "Walk": "Defined processes that facilitate regular collaboration between these intersecting disciplines.",
+            "Run": "Standardized, proactive collaboration processes integrated into daily operations of the organisation.",
+            "Fly": "Fully automated, optimized processes for continuous collaboration and information & responsibility sharing between different disciplines."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of collaboration between intersecting disciplines in FinOps?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness of collaboration between intersecting disciplines.",
+            "Crawl": "Basic metrics such as frequency of cross-functional meetings and initial collaboration outcomes.",
+            "Walk": "Comprehensive metrics including the impact of collaboration on cost optimization, efficiency, and project success for all disciplines.",
+            "Run": "Detailed metrics evaluating the long-term benefits of interdisciplinary collaboration on financial and operational performance.",
+            "Fly": "Advanced, metrics integrated with business intelligence to continuously optimize and improve interdisciplinary collaboration."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are intersecting discipline practices adopted within your organization for FinOps?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of intersecting discipline practices for FinOps.",
+            "Crawl": "Limited adoption, generally within specific teams or projects.",
+            "Walk": "Good adoption with formal policies and collaboration mechanisms implemented across major departments.",
+            "Run": "Wide adoption with regular reviews and continuous improvements based on interdisciplinary collaboration outcomes.",
+            "Fly": "Universal adoption with intersecting discipline practices deeply integrated into organizational culture and strategy."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are collaboration processes between intersecting disciplines automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all collaboration processes are manual.",
+            "Crawl": "Basic automation, such as shared digital workspaces and basic communication tools.",
+            "Walk": "Moderate automation with tools for workflow management, data sharing, and collaborative planning.",
+            "Run": "High-level automation including integrated platforms for near real-time collaboration, project management, and performance tracking.",
+            "Fly": "Full automation with data driven systems providing continuous collaboration & insights accross different disciplines involved."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "invoicing-chargeback",
+      "name": "Invoicing & Chargeback",
+      "description": "Managing cloud invoices and creating official chargebacks to the organization\u2019s Finance systems are important \u2013 and specific \u2013 processes that must be established as official interactions between the FinOps practice and Finance & Accounting personas.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the principles and practices of invoicing and chargeback in cloud cost management?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of invoicing and chargeback principles.",
+            "Crawl": "Basic awareness of invoicing and chargeback concepts, limited to specific teams.",
+            "Walk": "Moderate understanding across finance and cloud operations teams.",
+            "Run": "Strong, organization-wide knowledge with knowledge sharing on invoicing and chargeback practices.",
+            "Fly": "Expertise in invoicing and chargeback principles across the organization, with continuous changes based on industry knowledge."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for managing invoicing and chargeback of cloud costs?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes for managing invoicing and chargeback.",
+            "Crawl": "Ad-hoc processes used occasionally, typically in response to specific billing issues (for example big increase on spending).",
+            "Walk": "Defined processes that are regularly applied to manage cloud invoicing and chargeback.",
+            "Run": "Standardized, proactive processes integrated with financial and cloud management practices.",
+            "Fly": "Fully automated, optimized processes for continuous management and reconciliation of invoicing and chargeback."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its invoicing and chargeback practices?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness of invoicing and chargeback.",
+            "Crawl": "Basic metrics such as the timeliness and accuracy of invoice processing.",
+            "Walk": "Comprehensive metrics including error rates, dispute resolution times, and financial impact of chargeback.",
+            "Run": "Detailed metrics evaluating the long-term benefits of accurate invoicing and effective chargeback on financial planning.",
+            "Fly": "Advanced, near real-time metrics integrated with business intelligence to continuously improve invoicing and chargeback practices."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are invoicing and chargeback practices adopted within your organization for managing cloud costs?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of invoicing and chargeback practices.",
+            "Crawl": "Limited adoption, generally within finance and specific IT teams.",
+            "Walk": "Good adoption with formal policies and tools implemented across major departments.",
+            "Run": "Wide adoption with regular reviews and continuous improvements based on invoicing and chargeback outcomes.",
+            "Fly": "Universal adoption with invoicing and chargeback practices deeply integrated into organizational strategy and financial management."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are invoicing and chargeback processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all invoicing and chargeback processes are manual.",
+            "Crawl": "Basic automation, such as automated data entry or basic invoice generation.",
+            "Walk": "Moderate automation with tools for automated invoice processing, chargeback calculations, and reporting.",
+            "Run": "High-level automation including automated data entry and invoicing generation in financial systems.",
+            "Fly": "Full automation with data driven systems providing continuous cost insight and instant chargeback management."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "licensing-saas",
+      "name": "Licensing & SaaS",
+      "description": "Understanding and optimizing the impact of software licenses and SaaS investments on an organization\u2019s cloud cost structure",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the principles and practices of managing cloud licensing and SaaS subscriptions?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of cloud licensing and SaaS management principles.",
+            "Crawl": "Basic awareness of licensing and SaaS management concepts, limited to specific teams.",
+            "Walk": "Moderate understanding across finance, IT, and procurement teams, with some structured training.",
+            "Run": "Strong, organization-wide knowledge with regular training on best practices for licensing and SaaS management.",
+            "Fly": "Expertise in licensing and SaaS management across the organization, with continuous learning and contributions to industry best practices."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for managing cloud licensing and SaaS subscriptions?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes for managing cloud licensing and SaaS subscriptions.",
+            "Crawl": "Ad-hoc processes used occasionally, typically in response to specific licensing needs.",
+            "Walk": "Defined processes that are regularly applied to manage licensing and SaaS subscriptions for major cloud services.",
+            "Run": "Standardized, proactive processes integrated with procurement and financial management practices.",
+            "Fly": "Fully automated, optimized processes for continuous management, renewal, and optimization of licensing and SaaS subscriptions."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its licensing and SaaS management practices?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness of licensing and SaaS management.",
+            "Crawl": "Basic metrics such as the number of licenses and subscriptions managed and their costs.",
+            "Walk": "Comprehensive metrics including usage rates, compliance, and cost efficiency of licenses and subscriptions.",
+            "Run": "Detailed metrics evaluating the long-term financial impact and value derived from licensing and SaaS subscriptions.",
+            "Fly": "Advanced, near real-time metrics integrated with predictive analytics to continuously optimize licensing and SaaS management."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are licensing and SaaS management practices adopted within your organization for cloud services?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of licensing and SaaS management practices.",
+            "Crawl": "Limited adoption, generally within IT and procurement teams.",
+            "Walk": "Good adoption with formal policies and tools implemented across major departments.",
+            "Run": "Wide adoption with regular reviews and continuous improvements based on licensing and SaaS management outcomes.",
+            "Fly": "Universal adoption with licensing and SaaS management practices deeply integrated into organizational strategy and operational processes."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are licensing and SaaS management processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all licensing and SaaS management processes are manual.",
+            "Crawl": "Basic automation, such as automated tracking of license and subscription usage.",
+            "Walk": "Moderate automation with tools for automated renewal reminders, cost tracking, and compliance checks.",
+            "Run": "High-level automation including automated optimization of license allocations and SaaS subscriptions.",
+            "Fly": "Full automation with data driven systems providing continuous management, optimization, and near real-time insights for licensing and SaaS."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "onboarding-workloads",
+      "name": "Onboarding Workloads",
+      "description": "Orchestrating the migration of systems into, or between, cloud environments in a way that provides transparency to cost, usage, and impact; supports operational objectives; and establishes or maintains cost effectiveness.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the principles and best practices for onboarding workloads to the cloud?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of principles and best practices for onboarding workloads to the cloud.",
+            "Crawl": "Basic awareness of onboarding concepts, limited to architecture teams.",
+            "Walk": "Moderate understanding across key teams, with some knowledge sharing.",
+            "Run": "Strong, organization-wide knowledge with regular training on advanced workload onboarding practices for example IaC",
+            "Fly": "Expertise in onboarding workloads across the organization, with continuous learning and adaptation of best practices."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for onboarding workloads to the cloud?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes for onboarding workloads to the cloud.",
+            "Crawl": "Ad-hoc processes used occasionally, typically in response to specific projects.",
+            "Walk": "Defined processes that are regularly applied to major workloads.",
+            "Run": "Standardized, proactive onboarding processes integrated with overall cloud management and governance practices.",
+            "Fly": "Fully automated, optimized onboarding processes for continuous management and seamless integration of new workloads."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its workload onboarding practices?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness of workload onboarding.",
+            "Crawl": "Basic metrics such as the number of workloads onboarded and initial setup times.",
+            "Walk": "Comprehensive metrics including onboarding time and resource utilization.",
+            "Run": "Detailed metrics evaluating the long-term performance and cost benefits of onboarded workloads.",
+            "Fly": "Advanced, near real-time metrics integrated with continious analytics to optimize workload onboarding and lifecycle"
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are workload onboarding practices adopted within your organization?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of workload onboarding practices.",
+            "Crawl": "Limited adoption, generally within IT and specific project teams.",
+            "Walk": "Good adoption with formal policies and tools implemented across major departments.",
+            "Run": "Wide adoption with regular reviews and continuous improvements based on onboarding outcomes.",
+            "Fly": "Universal adoption with workload onboarding practices deeply integrated into organizational strategy and operational processes."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are workload onboarding processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all onboarding processes are manual.",
+            "Crawl": "Basic automation, such as automated setup scripts and templates.",
+            "Walk": "Moderate automation with tools for automated configuration, deployment, and initial testing.",
+            "Run": "High-level automation including end-to-end automated onboarding pipelines with continuous integration and delivery.",
+            "Fly": "Full automation with data driven systems providing continuous onboarding and near real-time insights on status and efficiency for new workloads."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "planning-estimating",
+      "name": "Planning & Estimating",
+      "description": "Estimation and exploration of potential cost and value of workloads if implemented in an organization\u2019s cloud environment in a particular model or models.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the principles and best practices for planning and estimating cloud costs?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of planning and estimating principles for cloud costs.",
+            "Crawl": "Basic awareness of planning and estimating concepts, limited to specific teams.",
+            "Walk": "Moderate understanding across key teams, with some structured training on cloud cost planning and estimating.",
+            "Run": "Strong, organization-wide knowledge with regular training on advanced planning and estimating practices.",
+            "Fly": "Expertise in planning and estimating cloud costs across the organization, with continuous learning and adaptation of best practices."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for planning and estimating cloud costs?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes for planning and estimating cloud costs.",
+            "Crawl": "Ad-hoc processes used occasionally, typically in response to specific projects or budget cycles.",
+            "Walk": "Defined processes that are regularly applied to major cloud projects and services.",
+            "Run": "Standardized, proactive planning and estimating processes integrated with financial and cloud management practices.",
+            "Fly": "Fully automated, optimized planning and estimating processes with near real-time updates and scenario planning capabilities."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its planning and estimating practices?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness of planning and estimating.",
+            "Crawl": "Basic metrics such as the accuracy of initial estimates compared to actual costs.",
+            "Walk": "Comprehensive metrics including forecasting accuracy, variance analysis, and financial impact.",
+            "Run": "Detailed metrics evaluating the long-term benefits of accurate planning and estimating on budget planning and cost optimization.",
+            "Fly": "Advanced, near real-time metrics integrated with predictive analytics to continuously improve planning and estimating accuracy and reliability."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are planning and estimating practices adopted within your organization for cloud costs?",
+          "lens": "Adoption",
+          "options": {
+            "Crawl": "Limited adoption, generally within IT and finance departments.",
+            "Walk": "Good adoption with formal policies and tools implemented across major departments.",
+            "Run": "Wide adoption with regular reviews and continuous improvements based on planning and estimating outcomes.",
+            "Fly": "Universal adoption with planning and estimating practices deeply integrated into organizational strategy and financial management.",
+            "Pre-crawl": ""
+          },
+          "scores": {
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0,
+            "Pre-crawl": 0
+          }
+        },
+        {
+          "text": "To what extent are planning and estimating processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all planning and estimating processes are manual.",
+            "Crawl": "Basic automation, such as automated data collection for planning inputs.",
+            "Walk": "Moderate automation with tools for data analysis, scenario planning, and report generation.",
+            "Run": "High-level automation including automated forecast generation, variance alerts, and recommendations.",
+            "Fly": "Full automation with data driven systems providing continuous planning, near real-time estimating, and adaptive adjustments."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "rate-optimization",
+      "name": "Rate Optimization",
+      "description": "Driving cloud rate efficiency through a combination of negotiated discounts, commitment discounts (RIs, Savings Plans, Committed Use Discounts), and other pricing mechanisms to meet the organization\u2019s operational and budgetary objectives.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the principles and best practices for optimizing cloud rates?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of rate optimization principles for cloud services.",
+            "Crawl": "Basic awareness of rate optimization concepts, limited to specific teams.",
+            "Walk": "Moderate understanding across key teams, with some structured training on rate optimization strategies.",
+            "Run": "Strong, organization-wide knowledge with regular updates on advanced rate optimization techniques.",
+            "Fly": "Expertise in rate optimization across the organization, with continuous learning and adaptation of best practices."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for optimizing cloud rates?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes for optimizing cloud rates.",
+            "Crawl": "Ad-hoc processes used occasionally",
+            "Walk": "Defined processes that are regularly applied.",
+            "Run": "Standardized, proactive rate optimization processes integrated with procurement and financial management practices.",
+            "Fly": "Fully automated, optimized rate optimization processes with near real-time adjustments and continuous monitoring."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its rate optimization practices?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness of rate optimization.",
+            "Crawl": "Basic metrics such as cost savings achieved from rate optimization efforts.",
+            "Walk": "Comprehensive metrics including cost efficiency, RI/SP/CUD utilization, and financial impact of rate optimizations.",
+            "Run": "Detailed metrics evaluating the long-term benefits of rate optimization on overall cloud spend and budget adherence.",
+            "Fly": "Advanced, near real-time metrics integrated with deep analytics to  optimize rates and maximize cost savings over time."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are rate optimization practices adopted within your organization for cloud services?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of rate optimization practices.",
+            "Crawl": "Limited adoption (-10% coverage), generally within IT and finance departments.",
+            "Walk": "Good adoption (10-30% coverage) with formal policies and tools implemented across major departments (IT & Finance).",
+            "Run": "Wide adoption (30% tot 80% coverage) with regular reviews and continuous improvements based on rate optimization outcomes.",
+            "Fly": "Universal adoption (+80% coverage) with rate optimization options deeply integrated into organizational strategy and financial management and planning."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are rate optimization processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all rate optimization processes are manual.",
+            "Crawl": "Basic automation, for example optimization opportunities or coverage drop.",
+            "Walk": "Moderate automation with tools for automated cost analysis, rate comparisons, and optimization recommendations.",
+            "Run": "High-level automation including automated rate adjustments (buying/selling) and continuous monitoring for optimization opportunities.",
+            "Fly": "Full automation with data driven systems providing continuous rate optimization, near real-time adjustments, and proactive cost management."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "reporting-analytics",
+      "name": "Reporting & Analytics",
+      "description": "Analyze cloud data and create reporting to gain insights into usage and spend patterns, identify opportunities for improvement, and support informed decision-making about cloud resources.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the principles and best practices for cloud cost reporting and analytics?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of reporting and analytics principles for cloud costs.",
+            "Crawl": "Basic knowledge of reporting and analytics.",
+            "Walk": "Moderate understanding across key teams, with some teams with more in depth knowledge.",
+            "Run": "Strong, organization-wide knowledge with regular communication on available reporting practices.",
+            "Fly": "Expertise in reporting and analytics across the organization, with structured knowledge & best practice sharing."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for generating and analyzing cloud cost reports?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes for generating and analyzing cloud cost reports.",
+            "Crawl": "Ad-hoc processes used occasionally, typically in response to specific visibility requests.",
+            "Walk": "Defined processes that are regularly applied to generate and analyze reports for major cloud vendors.",
+            "Run": "Standardized, proactive reporting and analytics processes integrated with financial and cloud management practices.",
+            "Fly": "Fully automated, optimized reporting and analytics processes with near real-time updates and comprehensive insights."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its reporting and analytics practices?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness and adoption of reporting and analytics.",
+            "Crawl": "Basic metrics such as the number of reports generated, views per taget group.",
+            "Walk": "Comprehensive metrics including report accuracy, timeliness, and the usefulness and view of insights provided for the targetgroup",
+            "Run": "Detailed metrics evaluating the long-term impact of reporting and analytics on cloud cost control and decision-making.",
+            "Fly": "Advanced, near real-time metrics integrated with business intelligence to continuously enhance reporting with business metrics ."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are reporting and analytics practices adopted within your organization for managing cloud costs?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of reporting and analytics practices.",
+            "Crawl": "Limited adoption, generally within specific teams for example IT.",
+            "Walk": "Good adoption, reporting implemented across major departments with different view per persona",
+            "Run": "Wide adoption with regular usability review and feedback loops to make the reports more usable.",
+            "Fly": "Universal adoption with reporting and analytics practices deeply integrated into organizational cloud strategy and financial management. Used as basis to take data driven decisions."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are reporting and analytics processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all reporting and analytics processes are manual.",
+            "Crawl": "Basic automation, only on cloud-native tooling",
+            "Walk": "Moderate automation with cloud-native tools for automated data analysis, report generation, and basic insights available near real- time.",
+            "Run": "High-level automation including automated insights generation, delivery to different persona's near real-time data integration, and advanced analytics.",
+            "Fly": "Full automation with data driven systems providing continuous reporting, near real-time analytics, and predictive insights for proactive decision-making."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "unit-economics",
+      "name": "Unit Economics",
+      "description": "Develop and track metrics that provide an understanding of how an organization\u2019s cloud use and cloud management practices impact the value of the organization\u2019s products, services, or activities.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the principles and best practices of unit economics in the context of cloud cost management?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of unit economics principles for cloud costs.",
+            "Crawl": "Basic awareness of unit economics concepts, limited to specific people.",
+            "Walk": "Moderate understanding across key persona, with knowledge to some teams on unit economics.",
+            "Run": "Strong knowledge with sharing of knowledge on more advanced unit economics.",
+            "Fly": "Expertise in unit economics across the organization, with continuous knowledge sharing."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place to calculate and analyze unit economics?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes for calculating and analyzing unit economics.",
+            "Crawl": "Ad-hoc processes used occasionally, typically for specific use cases",
+            "Walk": "Defined processes that are regularly applied to major cloud services and business metrics",
+            "Run": "Standardized, proactive processes integrated for every cloud service.",
+            "Fly": "Fully automated, optimized processes for continuous calculation and analysis of unit economics with near real-time updates."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its unit economics practices?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness of unit economics.",
+            "Crawl": "Basic metrics such as cost per unit of service or product.",
+            "Walk": "Comprehensive metrics including cost per user, cost per transaction, and other relevant unit metrics.",
+            "Run": "Detailed metrics evaluating the long-term impact of unit economics on cloud cost in relation with business profitability.",
+            "Fly": "Advanced, near real-time metrics integrated with predictive analytics to continuously improve unit economics and drive strategic decisions."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are unit economics practices adopted within your organization for managing cloud costs?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of unit economics practices.",
+            "Crawl": "Limited adoption, generally within finance and specific IT personas.",
+            "Walk": "Good adoption with formal policies and tools implemented across some teams.",
+            "Run": "Adoption with regular reviews and continuous improvements based on unit economics outcomes.",
+            "Fly": "Organisation-wide adoption with unit economics practices deeply integrated into organizational strategy and operational decision-making."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are unit economics processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all unit economics processes are manual.",
+            "Crawl": "Basic automation, such as automated data collection and basic calculations.",
+            "Walk": "Moderate automation with tools for automated data analysis, calculation, and reporting. Some manual data upload needed for business metrics.",
+            "Run": "High-level automation including near real-time data integration, advanced analytics, and predictive modeling.",
+            "Fly": "Full automation with data driven systems providing continuous calculation, near real-time analysis, and actionable insights for unit economics."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "key": "workload-optimization",
+      "name": "Workload Optimization",
+      "description": "Analyze and optimize cloud resources to match specific usage patterns while ensuring that workloads operate efficiently and generate sufficient business value for their cost.",
+      "report_group": "",
+      "questions": [
+        {
+          "text": "How well does your organization understand the principles and best practices for optimizing cloud workloads?",
+          "lens": "Knowledge",
+          "options": {
+            "Pre-crawl": "No understanding of workload optimization principles for cloud services.",
+            "Crawl": "Basic awareness of workload optimization concepts, limited to specific teams.",
+            "Walk": "Moderate understanding across key teams, with some structured training on workload optimization techniques.",
+            "Run": "Strong, organization-wide knowledge with regular training on advanced workload optimization practices.",
+            "Fly": "Expertise in workload optimization across the organization, with continuous learning and adaptation of best practices."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What processes does your organization have in place for optimizing cloud workloads?",
+          "lens": "Process",
+          "options": {
+            "Pre-crawl": "No formal processes for optimizing cloud workloads.",
+            "Crawl": "Ad-hoc processes used occasionally, typically in response to performance issues or cost overruns.",
+            "Walk": "Defined processes that are regularly applied to major cloud services and projects.",
+            "Run": "Standardized, proactive workload optimization processes integrated with cloud management and operational practices.",
+            "Fly": "Fully automated, optimized workload optimization processes with near real-time monitoring and continuous improvement."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "What metrics does your organization use to measure the effectiveness of its workload optimization practices?",
+          "lens": "Metrics",
+          "options": {
+            "Pre-crawl": "No specific metrics for tracking the effectiveness of workload optimization.",
+            "Crawl": "Basic metrics such as resource utilization and cost savings from optimization efforts.",
+            "Walk": "Comprehensive metrics including performance improvements, cost efficiency, and operational impact of workload optimizations.",
+            "Run": "Detailed metrics evaluating the long-term benefits of workload optimization on overall cloud spend and system performance.",
+            "Fly": "Advanced, near real-time metrics integrated with predictive analytics to continuously optimize workloads and maximize efficiency."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "How broadly are workload optimization practices adopted within your organization for cloud services?",
+          "lens": "Adoption",
+          "options": {
+            "Pre-crawl": "No formal adoption of workload optimization practices.",
+            "Crawl": "Limited adoption, generally within IT and specific project teams.",
+            "Walk": "Good adoption with formal policies and tools implemented across major departments.",
+            "Run": "Wide adoption with regular reviews and continuous improvements based on workload optimization outcomes.",
+            "Fly": "Universal adoption with workload optimization practices deeply integrated into organizational strategy and operational processes."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        },
+        {
+          "text": "To what extent are workload optimization processes automated within your organization?",
+          "lens": "Automation",
+          "options": {
+            "Pre-crawl": "No automation; all workload optimization processes are manual.",
+            "Crawl": "Basic automation, such as automated alerts for high resource usage and basic optimization scripts.",
+            "Walk": "Moderate automation with tools for automated performance tuning, cost analysis, and optimization recommendations.",
+            "Run": "High-level automation including automated workload adjustments, continuous monitoring, and near real-time optimization.",
+            "Fly": "Full automation with data driven systems providing continuous workload optimization, near real-time insights, and proactive cost management."
+          },
+          "scores": {
+            "Pre-crawl": 0.0,
+            "Crawl": 5.0,
+            "Walk": 10.0,
+            "Run": 15.0,
+            "Fly": 20.0
+          }
+        }
+      ]
+    }
+  ]
+}
