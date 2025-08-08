@@ -4,7 +4,7 @@ const APP_NAME = "FinOps Maturity Index";
 const MODEL_VERSION_FALLBACK = "1.3";
 const SNAP_KEY = "finops_cache_history_v1";
 const BRAND_KEY = "finops_brand_v1";
-const MODEL_AUTO_KEY = "finops_autoload_model_version_v1";
+const MODEL_HASH_KEY = "finops_auto_model_hash_v1";
 
 const LEVELS = ["Pre-crawl", "Crawl", "Walk", "Run", "Fly"];
 const LENSES = ["Knowledge", "Process", "Metrics", "Adoption", "Automation"];
@@ -212,37 +212,6 @@ export default function App() {
   function onLogoFile(which, file){ const r = new FileReader(); r.onload = () => setBrand(prev => ({...prev, [which]: r.result})); r.readAsDataURL(file); }
   function removeLogo(which){ setBrand(prev => ({...prev, [which]: ""})); }
 
-  // Auto-load default model from public/model.json on first mount.
-  // Only applies when there's no model yet, or when the last auto-loaded version changed,
-  // and we didn't replace a manually imported non-default model.
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      try {
-        const res = await fetch('/model.json', { cache: 'no-store' });
-        if (!res.ok) return; // no default model present
-        const json = await res.json();
-        const fetchedVersion = json.version || '0';
-        const prev = localStorage.getItem(MODEL_AUTO_KEY) || '';
-        const canReplace = !model || modelSource === 'model.json';
-        const changed = prev !== fetchedVersion;
-        if (!cancelled && canReplace && (!model || changed)) {
-          setModel(json);
-          setModelSource('model.json');
-          setSelectedCaps((json.capabilities || []).map(c => c.key));
-          localStorage.setItem(MODEL_AUTO_KEY, fetchedVersion);
-          setActiveTab('setup');
-        } else if (!prev) {
-          localStorage.setItem(MODEL_AUTO_KEY, fetchedVersion);
-        }
-      } catch (e) {
-        // ignore fetch errors; manual import still works
-      }
-    })();
-    return () => { cancelled = true; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   // Assessment focus + Lens section state
   const [currentCapKey, setCurrentCapKey] = useState(null);
   const [lensCapKey, setLensCapKey] = useState(null);
@@ -323,6 +292,36 @@ export default function App() {
     return { capTotals, overallAvgCapScore100, spiderData, lensOverview };
   }, [model, selectedCapsSafe.join("|"), JSON.stringify(answersByCap)]);
 
+  // Auto-load model.json from /public once (and reset if it changed)
+  useEffect(() => {
+    (async () => {
+      try {
+        if (model) return; // don't override a manually imported model in-session
+        const res = await fetch('/model.json', { cache: 'no-store' });
+        if (!res.ok) return;
+        const text = await res.text();
+        const obj = JSON.parse(text);
+        if (!obj?.capabilities) return;
+        // compute a stable hash of file contents; fallback to length+version if subtle crypto not available
+        let hash = '';
+        try {
+          const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+          hash = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+        } catch {
+          hash = `len:${text.length}|ver:${obj.version||''}`;
+        }
+        const prev = localStorage.getItem(MODEL_HASH_KEY);
+        setModel(obj);
+        setModelSource('public/model.json');
+        if (hash !== prev) {
+          localStorage.setItem(MODEL_HASH_KEY, hash);
+          setSelectedCaps(obj.capabilities.map(c=>c.key));
+          setAnswersByCap({});
+        }
+      } catch (_) { /* ignore auto-load errors */ }
+    })();
+  }, []);
+
   // --- Mechanics
   function importJSONFile(file, handler) {
     const reader = new FileReader();
@@ -387,7 +386,7 @@ export default function App() {
     <div className="min-h-screen bg-gray-50">
       {/* Print helpers */}
       <style>{`
-        @media print { .print\\:hidden { display: none !important; } .print\\:break-inside-avoid { break-inside: avoid; } .no-print-bg { background: white !important; } }
+        @media print { .print\:hidden { display: none !important; } .print\:break-inside-avoid { break-inside: avoid; } .no-print-bg { background: white !important; } }
       `}</style>
 
       {/* Header */}
@@ -450,7 +449,7 @@ export default function App() {
                       <li>Admin split into a <b>separate tab</b>.</li>
                       <li><b>Setup</b> meta fields (date, customer, assessor@costra.io) and clearer CTAs.</li>
                       <li><b>Assessment</b> per capability with <i>Prev/Next</i> navigation.</li>
-                      <li><b>Report</b>: multi-color lens bars, <b>SVG spider</b>, and a printable <b>maturity thermometer</b>.</li>
+                      <li><b>Report</b>: multi‑color lens bars, <b>SVG spider</b>, and a printable <b>maturity thermometer</b>.</li>
                       <li><b>Lens insights</b>: overall lens trend across all capabilities + capability picker to zoom in.</li>
                       <li><b>Snapshots</b> (save/restore/delete) in localStorage; export now includes <code>appName</code>.</li>
                       <li><b>Branding</b>: Costra + optional partner logo; footer renders <i>Powered by Costra together with Partner</i> (only when partner is set).</li>
@@ -656,4 +655,190 @@ export default function App() {
                               ) : null}
                               <div className="space-y-2">
                                 {LEVELS.map(level => {
-                                  const selected = selectedLevel === level;\n                                  return (\n                                    <label key={level} className=\"block\">\n                                      <input\n                                        type=\"radio\"\n                                        name={`q-${currentCap.key}-${idx}`}\n                                        value={level}\n                                        className=\"hidden\"\n                                        onChange={()=>setAnswer(currentCap.key, idx, level)}\n                                        checked={selected}\n                                      />\n                                      <div\n                                        className=\"rounded-full border px-4 py-3 text-sm transition-colors\"\n                                        style={{\n                                          borderColor: selected ? ls.color : \"#E5E7EB\",\n                                          backgroundColor: selected ? ls.tint : \"#FFFFFF\",\n                                          color: \"#111827\",\n                                        }}\n                                      >\n                                        {q.options?.[level] || level}\n                                      </div>\n                                    </label>\n                                  );\n                                })}\n                              </div>\n                            </div>\n                          );\n                        })}\n                      </div>\n                    )}\n                  </CardBody>\n                </Card>\n              </>\n            )}\n          </>\n        )}\n\n        {/* REPORT */}\n        {activeTab===\"report\" && (\n          <>\n            {!model && (\n              <Card><CardBody>No model loaded. Use Admin → Import Model.</CardBody></Card>\n            )}\n            {model && report && (\n              <>\n                {/* Maturity thermometer */}\n                <Card className=\"mb-4\">\n                  <CardHeader>Maturity</CardHeader>\n                  <CardBody>\n                    <Thermometer value={report.overallAvgCapScore100} />\n                  </CardBody>\n                </Card>\n\n                {/* Spider */}\n                <Card className=\"mb-4\">\n                  <CardHeader>Spider by capability</CardHeader>\n                  <CardBody>\n                    <SpiderAuto data={report.spiderData} />\n                  </CardBody>\n                </Card>\n\n                {/* Lens insights (collapsible) */}\n                <Card className=\"mb-4\">\n                  <CardHeader>\n                    <div className=\"flex items-center justify-between\">\n                      <span>Lens insights</span>\n                      <Button onClick={()=>setLensOpen(o=>!o)} className=\"bg-white\">{lensOpen ? 'Hide' : 'Show'}</Button>\n                    </div>\n                  </CardHeader>\n                  {lensOpen && (\n                    <CardBody>\n                      <div className=\"mb-6\">\n                        <div className=\"font-semibold mb-2\">Overall trend (all capabilities)</div>\n                        <LensBarsLite items={report.lensOverview} />\n                      </div>\n                      <div className=\"border-t my-4\"></div>\n                      <div>\n                        <div className=\"flex items-center gap-2 mb-2\">\n                          <div className=\"font-semibold\">Capability focus</div>\n                          <select className=\"border rounded-xl px-3 py-2\" value={lensCapKey || ''} onChange={(e)=>setLensCapKey(e.target.value)}>\n                            {selectedCapsSafe.map(k => {\n                              const c = allCaps.find(x=>x.key===k);\n                              return <option key={k} value={k}>{c ? c.name : k}</option>;\n                            })}\n                          </select>\n                        </div>\n                        {(() => {\n                          const c = report.capTotals.find(x => x.capKey === lensCapKey);\n                          if (!c) return <div className=\"text-sm text-gray-600\">Select a capability.</div>;\n                          const items = LENSES.map((l, i) => {\n                            const tt = c.lensTotals[l];\n                            const value = tt && tt.answered ? (tt.sum / (tt.answered * 20)) * 100 : 0;\n                            return { label: l, value, color: LENS_COLORS[i] };\n                          });\n                          return <LensBarsLite items={items} />;\n                        })()}\n                      </div>\n                    </CardBody>\n                  )}\n                </Card>\n\n                {/* Printable answers list */}\n                <Card className=\"mb-4\">\n                  <CardHeader>Answers</CardHeader>\n                  <CardBody>\n                    {selectedCapsSafe.map(capKey => {\n                      const cap = allCaps.find(c=>c.key===capKey);\n                      if (!cap) return null;\n                      const ans = answersByCap?.[cap.key] || {};\n                      return (\n                        <div key={cap.key} className=\"mb-4 print:break-inside-avoid\">\n                          <div className=\"mb-2 space-y-2\">\n                            <div className=\"flex items-center justify-between\">\n                              <div className=\"font-semibold\">{cap.name}</div>\n                              <div className=\"text-sm\">\n                                {(() => {\n                                  const agg = report.capTotals.find(x => x.capKey === cap.key);\n                                  const m = maturityFromScore(agg?.capScore100 || 0);\n                                  return (\n                                    <span className=\"inline-flex items-center gap-1\">\n                                      <span>{m.emoji}</span>\n                                      <span className=\"font-medium\">{m.key}</span>\n                                      <span className=\"text-gray-500 ml-2\">{agg ? agg.capScore100.toFixed(1) : \"0.0\"} / 100</span>\n                                    </span>\n                                  );\n                                })()}\n                              </div>\n                            </div>\n                            <div>\n                              {(() => {\n                                const agg = report.capTotals.find(x => x.capKey === cap.key);\n                                if (!agg) return null;\n                                const items = LENSES.map((l, i) => {\n                                  const tt = agg.lensTotals[l];\n                                  const value = tt && tt.answered ? (tt.sum / (tt.answered * 20)) * 100 : 0;\n                                  return { label: l, value, color: LENS_COLORS[i] };\n                                });\n                                return <LensBarsLite items={items} />;\n                              })()}\n                            </div>\n                          </div>\n                          <table className=\"w-full text-sm border rounded-xl overflow-hidden\">\n                            <thead className=\"bg-gray-50\">\n                              <tr>\n                                <th className=\"p-2 text-left\">Question</th>\n                                <th className=\"p-2 text-left\">Lens</th>\n                              </tr>\n                            </thead>\n                            <tbody>\n                              {cap.questions.map((q, idx) => (\n                                <tr key={idx} className=\"odd:bg-white even:bg-gray-50\">\n                                  <td className=\"p-2\">{q.text}</td>\n                                  <td className=\"p-2\">{q.lens ? (\n                                    <span className=\"inline-flex items-center rounded-full border px-2 py-0.5 text-xs\" title={ans?.[idx] || ''}\n                                          style={{ borderColor: getLensStyle(q.lens).color, backgroundColor: getLensStyle(q.lens).tint, color: getLensStyle(q.lens).color }}>\n                                      {q.lens}\n                                    </span>\n                                  ) : \"-\"}</td>\n                                </tr>\n                              ))}\n                            </tbody>\n                          </table>\n                        </div>\n                      );\n                    })}\n                  </CardBody>\n                </Card>\n              </>\n            )}\n          </>\n        )}\n      </main>\n\n      {/* Footer (prints as well) */}\n      <footer className=\"max-w-7xl mx-auto px-4 py-6 text-xs text-gray-500 text-center print:text-black\">\n        <div className=\"flex items-center justify-center gap-2 flex-wrap\">\n          <span>Powered by</span>\n          <img src={brand.costraLogo || \"/Logo black-2.svg\"} alt=\"Costra\" className=\"h-4 object-contain\" onError={(e)=>{e.currentTarget.style.display='none';}} />\n          {brand.partnerLogo && (<>\n            <span>together with</span>\n            <img src={brand.partnerLogo} alt=\"Partner\" className=\"h-4 object-contain\" />\n          </>)}\n        </div>\n      </footer>\n    </div>\n  );\n}\n
+                                  const selected = selectedLevel === level;
+                                  return (
+                                    <label key={level} className="block">
+                                      <input
+                                        type="radio"
+                                        name={`q-${currentCap.key}-${idx}`}
+                                        value={level}
+                                        className="hidden"
+                                        onChange={()=>setAnswer(currentCap.key, idx, level)}
+                                        checked={selected}
+                                      />
+                                      <div
+                                        className="rounded-full border px-4 py-3 text-sm transition-colors"
+                                        style={{
+                                          borderColor: selected ? ls.color : "#E5E7EB",
+                                          backgroundColor: selected ? ls.tint : "#FFFFFF",
+                                          color: "#111827",
+                                        }}
+                                      >
+                                        {q.options?.[level] || level}
+                                      </div>
+                                    </label>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </CardBody>
+                </Card>
+              </>
+            )}
+          </>
+        )}
+
+        {/* REPORT */}
+        {activeTab==="report" && (
+          <>
+            {!model && (
+              <Card><CardBody>No model loaded. Use Admin → Import Model.</CardBody></Card>
+            )}
+            {model && report && (
+              <>
+                {/* Maturity thermometer */}
+                <Card className="mb-4">
+                  <CardHeader>Maturity</CardHeader>
+                  <CardBody>
+                    <Thermometer value={report.overallAvgCapScore100} />
+                  </CardBody>
+                </Card>
+
+                {/* Spider */}
+                <Card className="mb-4">
+                  <CardHeader>Spider by capability</CardHeader>
+                  <CardBody>
+                    <SpiderAuto data={report.spiderData} />
+                  </CardBody>
+                </Card>
+
+                {/* Lens insights (collapsible) */}
+                <Card className="mb-4">
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <span>Lens insights</span>
+                      <Button onClick={()=>setLensOpen(o=>!o)} className="bg-white">{lensOpen ? 'Hide' : 'Show'}</Button>
+                    </div>
+                  </CardHeader>
+                  {lensOpen && (
+                    <CardBody>
+                      <div className="mb-6">
+                        <div className="font-semibold mb-2">Overall trend (all capabilities)</div>
+                        <LensBarsLite items={report.lensOverview} />
+                      </div>
+                      <div className="border-t my-4"></div>
+                      <div>
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="font-semibold">Capability focus</div>
+                          <select className="border rounded-xl px-3 py-2" value={lensCapKey || ''} onChange={(e)=>setLensCapKey(e.target.value)}>
+                            {selectedCapsSafe.map(k => {
+                              const c = allCaps.find(x=>x.key===k);
+                              return <option key={k} value={k}>{c ? c.name : k}</option>;
+                            })}
+                          </select>
+                        </div>
+                        {(() => {
+                          const c = report.capTotals.find(x => x.capKey === lensCapKey);
+                          if (!c) return <div className="text-sm text-gray-600">Select a capability.</div>;
+                          const items = LENSES.map((l, i) => {
+                            const tt = c.lensTotals[l];
+                            const value = tt && tt.answered ? (tt.sum / (tt.answered * 20)) * 100 : 0;
+                            return { label: l, value, color: LENS_COLORS[i] };
+                          });
+                          return <LensBarsLite items={items} />;
+                        })()}
+                      </div>
+                    </CardBody>
+                  )}
+                </Card>
+
+                {/* Printable answers list */}
+                <Card className="mb-4">
+                  <CardHeader>Answers</CardHeader>
+                  <CardBody>
+                    {selectedCapsSafe.map(capKey => {
+                      const cap = allCaps.find(c=>c.key===capKey);
+                      if (!cap) return null;
+                      const ans = answersByCap?.[cap.key] || {};
+                      return (
+                        <div key={cap.key} className="mb-4 print:break-inside-avoid">
+                          <div className="mb-2 space-y-2">
+                            <div className="flex items-center justify-between">
+                              <div className="font-semibold">{cap.name}</div>
+                              <div className="text-sm">
+                                {(() => {
+                                  const agg = report.capTotals.find(x => x.capKey === cap.key);
+                                  const m = maturityFromScore(agg?.capScore100 || 0);
+                                  return (
+                                    <span className="inline-flex items-center gap-1">
+                                      <span>{m.emoji}</span>
+                                      <span className="font-medium">{m.key}</span>
+                                      <span className="text-gray-500 ml-2">{agg ? agg.capScore100.toFixed(1) : "0.0"} / 100</span>
+                                    </span>
+                                  );
+                                })()}
+                              </div>
+                            </div>
+                            <div>
+                              {(() => {
+                                const agg = report.capTotals.find(x => x.capKey === cap.key);
+                                if (!agg) return null;
+                                const items = LENSES.map((l, i) => {
+                                  const tt = agg.lensTotals[l];
+                                  const value = tt && tt.answered ? (tt.sum / (tt.answered * 20)) * 100 : 0;
+                                  return { label: l, value, color: LENS_COLORS[i] };
+                                });
+                                return <LensBarsLite items={items} />;
+                              })()}
+                            </div>
+                          </div>
+                          <table className="w-full text-sm border rounded-xl overflow-hidden">
+                            <thead className="bg-gray-50">
+                              <tr>
+                                <th className="p-2 text-left">Question</th>
+                                <th className="p-2 text-left">Lens</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {cap.questions.map((q, idx) => (
+                                <tr key={idx} className="odd:bg-white even:bg-gray-50">
+                                  <td className="p-2">{q.text}</td>
+                                  <td className="p-2">{q.lens ? (
+                                    <span className="inline-flex items-center rounded-full border px-2 py-0.5 text-xs" title={ans?.[idx] || ''}
+                                          style={{ borderColor: getLensStyle(q.lens).color, backgroundColor: getLensStyle(q.lens).tint, color: getLensStyle(q.lens).color }}>
+                                      {q.lens}
+                                    </span>
+                                  ) : "-"}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      );
+                    })}
+                  </CardBody>
+                </Card>
+              </>
+            )}
+          </>
+        )}
+      </main>
+
+      {/* Footer (prints as well) */}
+      <footer className="max-w-7xl mx-auto px-4 py-6 text-xs text-gray-500 text-center print:text-black">
+        <div className="flex items-center justify-center gap-2 flex-wrap">
+          <span>Powered by</span>
+          <img src={brand.costraLogo || "/Logo black-2.svg"} alt="Costra" className="h-4 object-contain" onError={(e)=>{e.currentTarget.style.display='none';}} />
+          {brand.partnerLogo && (<>
+            <span>together with</span>
+            <img src={brand.partnerLogo} alt="Partner" className="h-4 object-contain" />
+          </>)}
+        </div>
+      </footer>
+    </div>
+  );
+}
